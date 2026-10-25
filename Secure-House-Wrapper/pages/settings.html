@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <main class="page-container">
+    <a class="text-link" href="../index.html">← Back to dashboard</a>
+
+    <section class="panel" style="margin-top:20px">
+      <h1>Settings</h1>
+      <p class="muted" style="margin:10px 0 20px">
+        Set preferences for this browser demo.
+      </p>
+
+      <label>
+        <input type="checkbox" id="compact">
+        Enable compact layout preference
+      </label>
+
+      <p id="message" class="muted" style="margin-top:15px"></p>
+      <button class="primary-button" id="save" style="margin-top:15px">
+        Save Settings
+      </button>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/settings.js"></script>
+  <script>
+    const compact = document.getElementById("compact");
+    const message = document.getElementById("message");
+
+    compact.checked = SHSettings.get("compact", false);
+
+    document.getElementById("save").addEventListener("click", () => {
+      SHSettings.set("compact", compact.checked);
+      message.textContent = "Settings saved in this browser.";
+    });
+  </script>
+</body>
+</html>

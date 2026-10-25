@@ -1,0 +1,28 @@
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+.house-icon { animation: float 4s ease-in-out infinite; }
+.pill i { animation: pulse 2s infinite; }
+
+.stat-card {
+  transition: border-color .2s, transform .2s;
+}
+
+.stat-card:hover {
+  border-color: #37617b;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

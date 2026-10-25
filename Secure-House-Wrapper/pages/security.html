@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Security</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <main class="page-container">
+    <a class="text-link" href="../index.html">← Back to dashboard</a>
+
+    <section class="panel" style="margin-top:20px">
+      <p class="eyebrow">PROTECTION CENTER</p>
+      <h1>Home Security</h1>
+      <p class="muted" style="margin:10px 0 20px">
+        Manage the security status of this demo.
+        This does not control a real alarm.
+      </p>
+
+      <button class="btn btn-light" id="toggle">Toggle Security</button>
+      <h3 id="status" style="margin-top:18px"></h3>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/security.js"></script>
+  <script>
+    const status = document.getElementById("status");
+
+    function render() {
+      status.textContent = "Demo status: " +
+        (SHSecurity.armed ? "ARMED" : "DISARMED");
+    }
+
+    render();
+
+    document.getElementById("toggle").addEventListener("click", () => {
+      SHSecurity.toggle();
+      render();
+    });
+  </script>
+</body>
+</html>
