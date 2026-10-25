@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Secure House Wrapper | Smart Home Security</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+<div class="app-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">⌂</span>
+      <span>
+        Secure<span class="brand-light">House</span>
+        <small>SMART SECURITY</small>
+      </span>
+    </a>
+
+    <p class="side-label">WORKSPACE</p>
+
+    <nav class="side-nav">
+      <a class="nav-link active" href="index.html">▦ Dashboard</a>
+      <a class="nav-link" href="pages/security.html">⬡ Home Security</a>
+      <a class="nav-link" href="pages/devices.html">◈ Smart Devices</a>
+      <a class="nav-link" href="pages/emergency.html">✚ Emergency Contacts</a>
+      <a class="nav-link" href="pages/activity.html">≋ Activity Logs</a>
+      <a class="nav-link" href="pages/settings.html">⚙ Settings</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="mini-shield">✓</div>
+      <strong>Your home, protected.</strong>
+      <p>Manage your smart home demo from one place.</p>
+      <span class="demo-label">FRONTEND DEMO</span>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR HOME AT A GLANCE</p>
+        <h1>Good evening <span>✦</span></h1>
+        <p class="muted">
+          Here's what's happening at your home today.
+        </p>
+      </div>
+
+      <div class="top-actions">
+        <span class="connected">
+          <i></i> Demo system online
+        </span>
+        <span class="avatar">AY</span>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="pill">
+          <i></i> HOME SECURITY OVERVIEW
+        </span>
+
+        <h2>
+          Your home is in<br>
+          <em>good hands.</em>
+        </h2>
+
+        <p>
+          Manage your security settings, review connected devices,
+          and keep track of activity from one simple dashboard.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn btn-light" id="securityToggle">
+            ✓ <span id="securityToggleText">Security is Armed</span>
+          </button>
+
+          <a class="btn btn-ghost" href="pages/security.html">
+            Manage Security ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="house-icon">
+          ⌂
+          <span class="house-check">✓</span>
+        </div>
+
+        <div class="floating-tag tag-top">
+          ◉ <span>Home protected</span>
+        </div>
+
+        <div class="floating-tag tag-bottom">
+          ✦ <span>Demo systems normal</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="stats-grid">
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-icon blue">◈</span>
+          <span class="stat-trend">● Demo</span>
+        </div>
+        <p class="muted">Connected devices</p>
+        <h3 id="deviceCount">04 <small>devices</small></h3>
+        <div class="stat-foot">Manage your demo devices</div>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-icon green">✓</span>
+          <span class="stat-trend">Status</span>
+        </div>
+        <p class="muted">Security status</p>
+        <h3 id="securityStatus">Armed</h3>
+        <div class="stat-foot">Stored in this browser</div>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-icon purple">♧</span>
+          <span class="stat-trend">Demo</span>
+        </div>
+        <p class="muted">Emergency contacts</p>
+        <h3 id="contactCount">00</h3>
+        <div class="stat-foot">Your saved demo contacts</div>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-icon orange">≋</span>
+          <span class="stat-trend">Recent</span>
+        </div>
+        <p class="muted">Activity records</p>
+        <h3 id="activityCount">00</h3>
+        <div class="stat-foot">Recorded in this browser</div>
+      </article>
+
+    </section>
+
+    <!-- LOWER CONTENT -->
+    <section class="content-grid">
+
+      <!-- DEVICES -->
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">SMART HOME</p>
+            <h2>Connected Devices</h2>
+          </div>
+          <a class="text-link" href="pages/devices.html">View all ↗</a>
+        </div>
+
+        <div class="device-list">
+
+          <div class="device-row">
+            <span class="device-symbol blue">◉</span>
+            <div class="device-info">
+              <strong>Living Room Camera</strong>
+              <small>Indoor camera · Demo</small>
+            </div>
+            <button class="switch on" data-device="Living room camera"
+              aria-label="Toggle living room camera">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="device-row">
+            <span class="device-symbol purple">☼</span>
+            <div class="device-info">
+              <strong>Smart Lights</strong>
+              <small>Living room · Demo</small>
+            </div>
+            <button class="switch on" data-device="Smart lights"
+              aria-label="Toggle smart lights">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="device-row">
+            <span class="device-symbol green">⌑</span>
+            <div class="device-info">
+              <strong>Front Door Lock</strong>
+              <small>Entrance · Demo</small>
+            </div>
+            <button class="switch on" data-device="Front door lock"
+              aria-label="Toggle front door lock">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="device-row">
+            <span class="device-symbol orange">♨</span>
+            <div class="device-info">
+              <strong>Thermostat</strong>
+              <small>Temperature control · Demo</small>
+            </div>
+            <button class="switch" data-device="Thermostat"
+              aria-label="Toggle thermostat">
+              <span></span>
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ACTIVITY -->
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">SYSTEM HISTORY</p>
+            <h2>Recent Activity</h2>
+          </div>
+          <a class="text-link" href="pages/activity.html">View logs ↗</a>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot green"></span>
+            <div>
+              <strong>Dashboard opened</strong>
+              <p>Secure House Wrapper demo is ready.</p>
+              <small>Current session</small>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot blue"></span>
+            <div>
+              <strong>Devices loaded</strong>
+              <p>Demo device information is available.</p>
+              <small>Current session</small>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot purple"></span>
+            <div>
+              <strong>Security overview</strong>
+              <p>Review your simulated security status.</p>
+              <small>Current session</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <h3>Quick Actions</h3>
+
+          <div class="quick-action-buttons">
+            <a class="quick-action" href="pages/security.html">
+              <span>⬡</span> Security
+            </a>
+
+            <a class="quick-action" href="pages/emergency.html">
+              <span>✚</span> Contacts
+            </a>
+
+            <a class="quick-action" href="pages/settings.html">
+              <span>⚙</span> Settings
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>© 2026 Secure House Wrapper</span>
+      <span>Smart Home Security · Frontend Demo</span>
+    </footer>
+
+  </main>
+</div>
+
+<!-- TOAST MESSAGE -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/storage.js"></script>
+<script src="js/security.js"></script>
+<script src="js/devices.js"></script>
+<script src="js/emergency.js"></script>
+<script src="js/activity.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+  document.getElementById("contactCount").textContent =
+    String(SHEmergency.contacts.length).padStart(2, "0");
+
+  document.getElementById("activityCount").textContent =
+    String(SHActivity.entries.length).padStart(2, "0");
+</script>
+
+</body>
+</html>
