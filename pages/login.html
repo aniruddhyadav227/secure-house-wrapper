@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Login | Secure House Wrapper</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <main class="page-container">
+    <section class="panel" style="max-width:440px;margin:8vh auto">
+      <p class="eyebrow">SECURE HOUSE WRAPPER</p>
+      <h1>Welcome back</h1>
+      <p class="muted" style="margin:10px 0 20px">
+        Demo login only. No account or real authentication is provided.
+      </p>
+
+      <form id="loginForm">
+        <label>Email
+          <input type="email" id="email" required>
+        </label>
+
+        <label>Password
+          <input type="password" id="password" required>
+        </label>
+
+        <button class="primary-button" style="margin-top:15px">
+          Continue to Demo
+        </button>
+      </form>
+
+      <p id="message" class="muted" style="margin-top:15px"></p>
+      <p style="margin-top:20px">
+        <a class="text-link" href="../index.html">← Return to dashboard</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", event => {
+      event.preventDefault();
+      document.getElementById("message").textContent =
+        "Demo only: no credentials were sent or saved.";
+    });
+  </script>
+</body>
+</html>

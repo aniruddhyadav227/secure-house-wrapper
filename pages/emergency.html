@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emergency Contacts</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <main class="page-container">
+    <a class="text-link" href="../index.html">← Back to dashboard</a>
+
+    <section class="panel" style="margin-top:20px">
+      <h1>Emergency Contacts</h1>
+      <p class="muted" style="margin:10px 0 20px">
+        Contacts are stored locally in this browser.
+      </p>
+
+      <form id="contactForm">
+        <label>Name
+          <input id="name" required>
+        </label>
+
+        <label>Phone number
+          <input id="phone" type="tel" required>
+        </label>
+
+        <button class="primary-button" style="margin-top:15px">
+          Add Contact
+        </button>
+      </form>
+
+      <div id="contactList" style="margin-top:20px"></div>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/emergency.js"></script>
+  <script>
+    const form = document.getElementById("contactForm");
+    const list = document.getElementById("contactList");
+
+    function render() {
+      list.replaceChildren();
+
+      SHEmergency.contacts.forEach(contact => {
+        const row = document.createElement("div");
+        row.style.padding = "12px 0";
+        row.style.borderBottom = "1px solid #26354a";
+
+        const name = document.createElement("strong");
+        name.textContent = contact.name + " — ";
+
+        const phone = document.createElement("span");
+        phone.textContent = contact.phone;
+
+        const remove = document.createElement("button");
+        remove.className = "btn btn-ghost";
+        remove.style.marginLeft = "10px";
+        remove.textContent = "Remove";
+        remove.addEventListener("click", () => {
+          SHEmergency.remove(contact.id);
+          render();
+        });
+
+        row.append(name, phone, remove);
+        list.appendChild(row);
+      });
+    }
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const added = SHEmergency.add(
+        document.getElementById("name").value,
+        document.getElementById("phone").value
+      );
+
+      if (added) {
+        form.reset();
+        render();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

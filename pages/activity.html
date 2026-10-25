@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activity Logs</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <main class="page-container">
+    <a class="text-link" href="../index.html">← Back to dashboard</a>
+
+    <section class="panel" style="margin-top:20px">
+      <h1>Activity Logs</h1>
+      <p class="muted" style="margin:10px 0 20px">
+        Recent activity recorded by this demo.
+      </p>
+      <div id="logs"></div>
+    </section>
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/activity.js"></script>
+  <script>
+    const root = document.getElementById("logs");
+    const entries = SHActivity.entries;
+
+    if (!entries.length) {
+      root.textContent =
+        "No saved activity yet. Try changing a demo device on the dashboard.";
+    } else {
+      entries.forEach(entry => {
+        const row = document.createElement("p");
+        row.style.padding = "12px 0";
+        row.style.borderBottom = "1px solid #26354a";
+        row.textContent = entry.time + " — " + entry.message;
+        root.appendChild(row);
+      });
+    }
+  </script>
+</body>
+</html>

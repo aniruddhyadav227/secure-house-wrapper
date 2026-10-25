@@ -1,0 +1,172 @@
+.hero-card {
+  min-height: 290px;
+  border-radius: 20px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 80% 40%, #174b70, transparent 45%),
+    linear-gradient(115deg, #14243b, #112d49);
+  border: 1px solid #29445d;
+  margin-bottom: 20px;
+}
+
+.hero-copy { position: relative; z-index: 1; }
+.pill {
+  display: inline-block;
+  color: #a5e8ce;
+  background: #183b3c;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.pill i, .connected i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #45d6a0;
+  margin-right: 6px;
+}
+.hero-copy h2 {
+  font-size: 38px;
+  line-height: 1.15;
+  margin: 18px 0 12px;
+}
+.hero-copy h2 em { color: #70c9ff; font-style: normal; }
+.hero-copy p { color: #a6b9cf; font-size: 13px; max-width: 420px; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 15px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn-light { background: #d9f1ff; color: #10283d; }
+.btn-ghost { border-color: #43617d; color: #d7e8f8; background: transparent; }
+.btn:hover { filter: brightness(1.12); }
+
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+}
+.orbit {
+  position: absolute;
+  width: 235px;
+  height: 235px;
+  border: 1px solid #37617b;
+  border-radius: 50%;
+}
+.orbit-two { width: 175px; height: 175px; border-style: dashed; }
+.house-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 105px;
+  color: #7bd0ff;
+  line-height: 1;
+}
+.house-check {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  background: #42d8a0;
+  color: #082c2b;
+  border-radius: 50%;
+  font-size: 19px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+}
+.floating-tag {
+  position: absolute;
+  background: #10243a;
+  border: 1px solid #315675;
+  border-radius: 10px;
+  padding: 9px 11px;
+  font-size: 12px;
+  color: #6de2b3;
+}
+.floating-tag span { color: #d7e8f8; font-size: 10px; }
+.tag-top { top: 20px; right: 0; }
+.tag-bottom { bottom: 20px; left: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  background: #111c2e;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 15px;
+  padding: 18px;
+}
+.stat-top { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.stat-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+.blue { color: #58b9ff; background: #173149; }
+.green { color: #45d6a0; background: #183b36; }
+.purple { color: #b59aff; background: #2a2544; }
+.orange { color: #ffc66e; background: #403324; }
+.stat-trend { color: #83d9ba; font-size: 10px; }
+.stat-card .muted { font-size: 11px; }
+.stat-card h3 { font-size: 25px; margin: 5px 0 8px; }
+.stat-card h3 small { color: #91a1b9; font-size: 11px; font-weight: 400; }
+.stat-foot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 10px; color: #7c8ea8; font-size: 10px; }
+
+.content-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+.device-list { display: grid; }
+.device-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.device-symbol {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.device-info { flex: 1; min-width: 0; }
+.device-info strong { display: block; font-size: 12px; }
+.device-info small { display: block; color: #8293aa; font-size: 10px; margin-top: 3px; }
+
+.switch {
+  width: 36px;
+  height: 21px;
+  border: 0;
+  border-radius: 20px;
+  background: #33435a;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.switch span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #a2b1c5;
+  border-radius: 50%;
+  transition: .2s;
+}
